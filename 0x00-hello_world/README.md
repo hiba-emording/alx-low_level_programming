@@ -1,7 +1,9 @@
 # STARTED WITH C
 ## FIRST PROJECT
+### 0x00. C - Hello, World
 
 *Used betty coding style and documentation*
+~ Rule: betty style always starts comments with CAPS - ends with dot "."
 
 **0. Preprocessor**
 A script that runs a C file through the preprocessor and save the result into another file.
