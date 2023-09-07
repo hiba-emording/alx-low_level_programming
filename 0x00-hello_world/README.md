@@ -1,13 +1,24 @@
-## STARTED WITH C
-# FIRST PROJECT
+# STARTED WITH C
+## FIRST PROJECT
 
-|     Tasks      | Describtions                                                                               |     Code     |
-| :------------- | :------------------------------------------------------------------------------------------| :----------- |
-| 0.Preprocessor | a script that runs a C file through the preprocessor and save the result into another file | Row 1, Col 3 |
-| Row 2, Col 1   | Row 2, Col 2                                                                               | Row 2, Col 3 |
-| Row 3, Col 1   | Row 3, Col 2                                                                               | Row 3, Col 3 |
-| Row 4, Col 1   | Row 4, Col 2                                                                               | Row 4, Col 3 |
-| Row 5, Col 1   | Row 5, Col 2                                                                               | Row 5, Col 3 |
-| Row 6, Col 1   | Row 6, Col 2                                                                               | Row 6, Col 3 |
-| Row 7, Col 1   | Row 7, Col 2                                                                               | Row 7, Col 3 |
-| Row 8, Col 1   | Row 8, Col 2                                                                               | Row 8, Col 3 |
+*Used betty coding style and documentation*
+
+**0. Preprocessor**
+<A script that runs a C file through the preprocessor and save the result into another file.>
+* The C file name will be saved in the variable <$CFILE>
+* The output should be saved in the file <c>
+```
+#!/bin/bash
+gcc -E $CFILE > c
+```
+
+**1. Compiler**
+<A script that compiles a C file but does not link.>
+* The C file name will be saved in the variable <$CFILE>
+* The output file should be named the same as the C file, but with the extension <.o> instead of <.c>
+```
+#!/bin/bash
+gcc -c "$CFILE" -o "${CFILE%.c}.o"
+```
+
+
