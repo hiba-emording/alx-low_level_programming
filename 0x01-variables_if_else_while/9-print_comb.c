@@ -3,9 +3,9 @@
 /**
 * main - Entry point of the program
 *
-* This program prints all possible combinations of single-digit numbers,
-* separated by a comma and a space, in ascending order.
-* Using putchar only 4 times.
+* This program prints all the single-digit numbers separated by a comma
+* and a space, in ascending order.
+* Using putchar only four times.
 *
 * Return: Always 0 to indicate success.
 */
@@ -14,34 +14,26 @@ int main(void)
 
 {
 
-/* We declare variables */
-int N1, N2;
+/* N stands for the number */
+int N;
 
-/*
- * We use outer and inner loops one for numbers N2,
- *  and the other for character representation N1.
- */
-
-
-for (N1 = 0; N1 <= 9; N1++)
-{
-for (N2 = 0; N2 <= 9; N2++)
+/* counting from zero for ascending order */
+for (N = 0; N <= 9; N++)
 {
 
-/* convert N1 to its character representation */
-putchar(N1 + '0');
+/* Converting it to its representation */
+putchar(N + '0');
 
-/* if its not the last number we seprate by comma and space */
-if (N1 != 9 || N2 != 9)
+/* if its not the last number add comma and space */
+if (N != 9)
 {
 putchar(',');
 putchar(' ');
 }
-}
 
 }
 
-/* followed by newlinw */
+/* to be followed by newline */
 putchar('\n');
 
 return (0);
