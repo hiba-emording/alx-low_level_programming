@@ -17,9 +17,11 @@ int number = 0;
 
 while (number <= 9)
 {
-printf("%d\n", number);
+printf("%d", number);
 number++;
 }
+
+printf("\n");
 
 return (0);
 
