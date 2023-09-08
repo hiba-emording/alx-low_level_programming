@@ -20,9 +20,9 @@ int N1, N2;
 /* 2 nested for loops starts from zero to ensure ascending order */
 for (N1 = 0; N1 <= 99; N1++)
 
-/* N2 starts from N1 to ensure difference */
+/* N2 starts from N1+1 to ensure difference */
 {
-for (N2 = N1; N2 <= 99; N2++)
+for (N2 = N1 + 1; N2 <= 99; N2++)
 {
 
 /* Print the current combination of two-digit numbers */
@@ -34,7 +34,7 @@ putchar(N2 / 10 + '0');
 putchar(N2 % 10 + '0');
 
 /* if it's not the last combination add a comma and space */
-if (N1 != 99 || N2 != 99)
+if (N1 != 98 || N2 != 99)
 {
 putchar(',');
 putchar(' ');
