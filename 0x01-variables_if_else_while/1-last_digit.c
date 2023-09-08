@@ -16,7 +16,7 @@ int n;
 int LD;
 
 srand(time(0));
-n = rand();
+n = rand() - RAND_MAX / 2;
 
 /* LD is last digit */
 
