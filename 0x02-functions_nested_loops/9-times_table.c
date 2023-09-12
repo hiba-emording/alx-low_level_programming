@@ -11,23 +11,18 @@ int n, m, p;
 
 for (n = 0; n <= 9; n++)
 {
+_putchar('0');
 
 for (m = 0; m <= 9; m++)
 {
-
-p = n * m;
-
-if (m != 0)
-{
 _putchar(',');
 _putchar(' ');
-}
+p = n * m;
 
 if (p <= 9)
 {
 _putchar(' ');
-
-_putchar(p + '0');
+_putchar('0' + p);
 }
 
 else
@@ -36,4 +31,7 @@ _putchar((p / 10) + '0');
 _putchar((p % 10) + '0');
 }
 
+}
+_putchar('\n');
+}
 }
