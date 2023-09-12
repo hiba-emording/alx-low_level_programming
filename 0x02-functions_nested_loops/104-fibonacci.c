@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * main - Entry point of the program.
@@ -6,37 +6,30 @@
  * Description:
  * This program prints the first 98 Fibonacci numbers,
  * separated by a comma and space.
+ * Started with 1 and 2 .
  * Followed by newline.
  *
- * Return: 0 (Success)
+ * Return: 0 (Success).
  */
 
 int main(void)
 
 {
-/* count is number of Fibonacci numbers to print */
-int count = 98;
-
-/* declare first and second numbers */
-unsigned int first = 1, second = 2, next;
-
-/*declare counter */
 int i;
+unsigned long fibonacci_1 = 1, fibonacci_2 = 2, next;
 
-/* Print the first two Fibonacci numbers */
-printf("%u, %u", first, second);
+for (i = 0; i < 98; i++)
 
-/* Calculate and print the remaining Fibonacci numbers */
-/* value of first and second updated */
-for (i = 3; i <= count; i++)
 {
-next = first + second;
-printf(", %u", next);
-first = second;
-second = next;
+printf("%lu", fibonacci_1);
+if (i < 97)
+printf(", ");
+
+next = fibonacci_1 + fibonacci_2;
+fibonacci_1 = fibonacci_2;
+fibonacci_2 = next;
 }
 
 printf("\n");
-
 return (0);
 }
