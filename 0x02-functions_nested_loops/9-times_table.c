@@ -25,9 +25,6 @@ _putchar(' ');
 
 if (p <= 9)
 {
-_putchar(' ');
-_putchar(' ');
-
 _putchar(p + '0');
 }
 
