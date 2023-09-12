@@ -17,24 +17,23 @@ for (m = 0; m <= 9; m++)
 
 p = n * m;
 
-if (p <= 9)
+if (m != 0)
 {
-_putchar(p + '0');
 _putchar(',');
 _putchar(' ');
+}
+
+if (p <= 9)
+{
+_putchar(' ');
+
+_putchar(p + '0');
 }
 
 else
 {
 _putchar((p / 10) + '0');
 _putchar((p % 10) + '0');
-_putchar(',');
-_putchar(' ');
-}
-
-}
-
-_putchar('\n');
 }
 
 }
