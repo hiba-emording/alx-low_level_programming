@@ -22,6 +22,6 @@ last_digit = n % 10;
 
 _putchar('0' + last_digit);
 
-return ('0' + last_digit);
+return (last_digit);
 
 }
