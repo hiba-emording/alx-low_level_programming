@@ -17,15 +17,11 @@ for (m = 0; m <= 9; m++)
 
 p = n * m;
 
-if (m != 0)
-{
-_putchar(',');
-_putchar(' ');
-}
-
 if (p <= 9)
 {
 _putchar(p + '0');
+_putchar(',');
+_putchar(' ');
 }
 
 else
