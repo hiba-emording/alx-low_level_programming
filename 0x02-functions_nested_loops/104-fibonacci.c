@@ -18,20 +18,20 @@ int main(void)
 int count = 98;
 
 /* declare first and second numbers */
-int first = 1, second = 2, next;
+unsigned int first = 1, second = 2, next;
 
 /*declare counter */
 int i;
 
 /* Print the first two Fibonacci numbers */
-printf("%d, %d", first, second);
+printf("%u, %u", first, second);
 
 /* Calculate and print the remaining Fibonacci numbers */
 /* value of first and second updated */
 for (i = 3; i <= count; i++)
 {
 next = first + second;
-printf(", %d", next);
+printf(", %u", next);
 first = second;
 second = next;
 }
