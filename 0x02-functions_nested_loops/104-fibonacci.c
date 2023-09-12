@@ -13,7 +13,7 @@
 int main(void)
 {
 int i;
-unsigned long fibonacci_1 = 1, fibonacci_2 = 2, next;
+unsigned long fibonacci_1 = 0, fibonacci_2 = 1, next;
 unsigned long fibonacci_1_half1, fibonacci_1_half2,
 fibonacci_2_half1, fibonacci_2_half2;
 unsigned long half1, half2;
