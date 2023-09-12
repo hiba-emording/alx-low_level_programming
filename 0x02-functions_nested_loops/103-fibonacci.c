@@ -27,7 +27,7 @@ a = b;
 b = c;
 }
 
-printf("Sum of even Fibonacci terms not exceeding 4,000,000: %lu\n", sum);
+printf("%lu\n", sum);
 
 return (0);
 }
