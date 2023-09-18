@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <time.h>
+#define PASSWORD_LENGTH 20
 
 /**
  * main - Entry point.
