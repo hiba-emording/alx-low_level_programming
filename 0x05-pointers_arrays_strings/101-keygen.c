@@ -7,22 +7,45 @@
  * Description: a program that generates random valid passwords,
  * for the program 101-crackme.
  * Return: 0 for success.
- */
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+const char *str;
+size_t len;
+
+extern unsigned long checksum_asm(*str, len);
 
 int main(void)
-{
-int sum;
-char c;
-srand(time(NULL));
 
-	while (sum <= 2645)
+{
+
+srand(time(NULL));
+char password[12];
+int i;
+unsigned long sum;
+
+while (1)
+{
+
+	for (i = 0; i < 11; i++)
 	{
-		c = rand() % 120;
-		sum += c;
-		putchar(c);
+		password[i] = rand() % 94 + 33;
 	}
 
-putchar(7777 - sum);
+password[11] = '\0';
+sum = checksum_asm(password, 11);
+
+	if (sum == 0xad4)
+	{
+		printf("Password: %s\n", password);
+		break;
+	}
+
+}
 
 return (0);
+
 }
