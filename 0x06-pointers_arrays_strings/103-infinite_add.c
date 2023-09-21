@@ -1,53 +1,56 @@
 #include "main.h"
 
 /**
- * infinite_add - Add two numbers represented as strings.
- * @n1: Pointer to the first number string.
- * @n2: Pointer to the second number string.
- * @r: Pointer to the buffer to store the result.
+ * infinite_add - Adds two numbers.
+ * @n1: First number represented as a string.
+ * @n2: Second number represented as a string.
+ * @r: Buffer to store the result.
  * @size_r: Size of the result buffer.
  *
- * Return: Pointer to the result or 0 in case of overflow.
+ * Return: 0 if the result cannot be stored in r,
+ * otherwise a pointer to the result.
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int i = 0, j = 0, carry = 0, sum, start, end, result_size = 0;
-char temp;
+int index_n1, index_n2, result_index, result_secondary_index;
+int carry, temp_sum, swap;
 
-	while (n1[i] != '\0')
-	i++;
-	while (n2[j] != '\0')
-	j++;
-
-	if (i >= size_r || j >= size_r)
-	return (0);
-	i--;
-	j--;
-
-	while (i >= 0 || j >= 0 || carry)
-	{
-		sum = carry;
-		if (i >= 0)
-		sum += n1[i] - '0';
-		if (j >= 0)
-		sum += n2[j] - '0';
-		carry = sum / 10;
-		r[result_size] = (sum % 10) + '0';
-		result_size++;
-		i--;
-		j--;
-		if (result_size >= size_r)
+	for (index_n1 = 0; n1[index_n1]; index_n1++)
+	;
+	for (index_n2 = 0; n2[index_n2]; index_n2++)
+	;
+	if (index_n1 > size_r || index_n2 > size_r)
 		return (0);
-	}
-	r[result_size++] = '\0';
-
-	for (start = 0, end = result_size - 1; start < end; start++, end--)
+	carry = 0;
+	for (index_n1 -= 1, index_n2 -= 1, result_index = 0;
+	result_index < size_r - 1; index_n1--, index_n2--, result_index++)
 	{
-		temp = r[start];
-		r[start] = r[end];
-		r[end] = temp;
-	}
+		temp_sum = carry;
 
+		if (index_n1 >= 0)
+			temp_sum += n1[index_n1] - '0';
+
+		if (index_n2 >= 0)
+			temp_sum += n2[index_n2] - '0';
+
+		if (index_n1 < 0 && index_n2 < 0 && temp_sum == 0)
+		{
+			break;
+		}
+		carry = temp_sum / 10;
+		r[result_index] = temp_sum % 10 + '0';
+	}
+	r[result_index] = '\0';
+	if (index_n1 >= 0 || index_n2 >= 0 || carry)
+		return (0);
+	for (result_index -= 1, result_secondary_index = 0;
+	result_secondary_index < result_index;
+	result_index--, result_secondary_index++)
+	{
+		swap = r[result_index];
+		r[result_index] = r[result_secondary_index];
+		r[result_secondary_index] = swap;
+	}
 	return (r);
 }
