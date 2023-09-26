@@ -2,155 +2,46 @@
 ## FIRST PROJECT
 ### 0x00. C - Hello, World
 
-*Used betty coding style and documentation*
+🚀 Welcome to the world of C programming, where we embark on a journey of code exploration and discovery. This project consists of a series of tasks that will introduce you to the fundamental aspects of C programming. Let's dive in and uncover the magic of C! 🌟
+
+> *Used betty coding style and documentation*
 ~ Rule: betty style always starts comments with CAPS - ends with dot "."
 
-**0. Preprocessor**
-A script that runs a C file through the preprocessor and save the result into another file.
-* The C file name will be saved in the variable $CFILE
-* The output should be saved in the file c
-```
-#!/bin/bash
-gcc -E $CFILE > c
-```
+## Scripts:
 
-**1. Compiler**
-A script that compiles a C file but does not link.
-* The C file name will be saved in the variable $CFILE
-* The output file should be named the same as the C file, but with the extension .o instead of .c
-```
-#!/bin/bash
-gcc -c "$CFILE" -o "${CFILE%.c}.o"
-```
+### Task 0: Preprocessor (0-preprocessor)
+- **Description:** This script runs a C file through the preprocessor, taking the C file name stored in the variable `$CFILE`, and saves the preprocessed result into a file named `c`.
+- **Fun Fact:** The preprocessor is like a language translator, converting C code into a form that the compiler can understand. 📜
 
-**2. Assembler**
-A script that generates the assembly code of a C code and save it in an output file.
-* The C file name will be saved in the variable $CFILE
-* The output file should be named the same as the C file, but with the extension .s instead of .c
-```
-#!/bin/bash
-gcc -S "$CFILE" -o "${CFILE%.c}.s"
-```
+### Task 1: Compiler (1-compiler)
+- **Description:** In this task, we compile a C file without linking it. The C file name is stored in `$CFILE`, and the output file is named the same as the C file but with the `.o` extension.
+- **Fun Fact:** Compiling is like translating human language into machine language, making it ready for the computer to execute. 🛠️
 
-**3. Name**
-A script that compiles a C file and creates an executable named cisfun.
-* The C file name will be saved in the variable $CFILE
-```
-#!/bin/bash
-gcc "$CFILE" -o cisfun
-```
+### Task 2: Assembler (2-assembler)
+- **Description:** This script generates the assembly code of a C program and saves it in an output file. The C file name is stored in `$CFILE`, and the output file is named with a `.s` extension.
+- **Fun Fact:** Assembly code is a low-level representation of the program, providing a bridge between human-readable code and machine instructions. 💡
 
-**4. Hello, puts**
-A C program that prints exactly <sup> "Programming is like building a multilingual puzzle </sup>, followed by a new line.
-* Use the function puts
-* The program should end with the value 0
-```
-#include <stdio.h>
+### Task 3: Name (3-name)
+- **Description:** Here, we compile a C file and create an executable named `cisfun`. The C file name is stored in `$CFILE`.
+- **Fun Fact:** Executables are like magic spells; they make the computer perform specific tasks when invoked. ✨
 
-/**
- * main - Entry point of the program.
- *
- * Description: This program use puts function to print a message and return 0.
- *
- * Return: Always 0 (Success)
- */
+### Task 4: Hello, puts (4-puts.c)
+- **Description:** Write a C program that prints "Programming is like building a multilingual puzzle," followed by a new line, using the function `puts`.
+- **Fun Fact:** The `puts` function is like a message in a bottle, sending your text to the console for all to see. 🧩
 
-int main(void)
-{
-    /* Using puts function to print */
-puts("\"Programming is like building a multilingual puzzle");
-    /* Return: Always 0 (Success) */
-return (0);
-}
+### Task 5: Hello, printf (5-printf.c)
+- **Description:** Create a C program that prints "with proper grammar, but the outcome is a piece of art," followed by a new line, using the `printf` function.
+- **Fun Fact:** `printf` is like a master artist, allowing you to craft your output with precision and style. 🎨
 
-```
+### Task 6: Size is not grandeur (6-size.c)
+- **Description:** Write a C program that prints the sizes of various types on the computer it's compiled and run on. The output should match the example provided.
+- **Fun Fact:** Knowing the sizes of data types is like understanding the building blocks of your computer's memory. 🏗️
 
-**5. Hello, printf**
-A C program that prints exactly <sup> with proper grammar, but the outcome is a piece of art,</sup>, followed by a new line.
-* Use the function printf
-* The program should return 0
-* The program should compile without warning when using the -Wall gcc option
-```
-#include <stdio.h>
-/**
- * main - Entry point of the program.
- *
- * Description: This program use printf function to print a text and return 0.
- *
- * Return: Always 0 (Success)
- */
+### Task 7: Intel (100-intel)
+- **Description:** This script generates the assembly code (Intel syntax) of a C program and saves it in an output file. The C file name is stored in the variable `$CFILE`, and the output file has a `.s` extension.
+- **Fun Fact:** Different assembly syntaxes are like different dialects in a language; they convey the same meaning but with variations. 💬
 
-int main(void)
-{
-    /* Using printf function to print */
-printf("with proper grammar, but the outcome is a piece of art,\n");
-    /* Return: Always 0 (Success) */
-return (0);
-}
-
-```
-
-**6. Size is not grandeur, and territory does not make a nation**
-A  C program that prints the size of various types on the computer it is compiled and run on.
-* The program should return 0.
-```
-#include <stdio.h>
-/**
- * main - Entry point of the program.
- *
- * Description: This program prints the sizes of various types in computer.
- *
- * Return: Always 0 (Success)
- */
-
-int main(void)
-{
-printf("Size of a char: %ld byte(s)\n", sizeof(char));
-printf("Size of an int: %ld byte(s)\n", sizeof(int));
-printf("Size of a long int: %ld byte(s)\n", sizeof(long int));
-printf("Size of a long long int: %ld byte(s)\n", sizeof(long long int));
-printf("Size of a float: %ld byte(s)\n", sizeof(float));
-
-return (0);
-}
-
-```
-
-**7. Intel**
-A script that generates the assembly code (Intel syntax) of a C code and save it in an output file.
-* The C file name will be saved in the variable $CFILE
-* The output file should be named the same as the C file, but with the extension .s instead of .c
-```
-#!/bin/bash
-gcc -S -masm=intel "$CFILE" -o "${CFILE%.c}.s"
-```
-
-**8. UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity**
-A C program that prints exactly <sup> and that piece of art is useful" - Dora Korpar, 2015-10-19 </sup>, followed by a new line, to the standard error.
-* Not allowed to use any functions listed in the NAME section of the man (3) printf or man (3) puts
-*used other different libraries: unistd.h - string.h*
-* The program should return 1
-* The program should compile without any warnings when using the -Wall gcc option
-```
-#include <unistd.h>
-#include <string.h>
-/**
- * main - Entry point of the program.
- *
- * Description: A program uses write to print a message and return 1.
- *
- * Return: the integer value 1 indicates the program finished with an error.
- */
-
-int main(void)
-{
-	/* Using write function to print */
-const char *quote =
-"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-write((1), quote, strlen(quote));
-	/* Return: Always 1 (error) */
-return (1);
-}
-
-```
+### Task 8: UNIX is basically a simple operating system (101-quote.c)
+- **Description:** Create a C program that prints "and that piece of art is useful" - Dora Korpar, 2015-10-19, followed by a new line, to the standard error.
+- **Fun Fact:** Printing to standard error is like leaving a note where everyone can see it, but with a bit of a twist. 📝
 
