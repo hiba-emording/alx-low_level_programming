@@ -18,3 +18,5 @@
 * Global Compatibility: C is globally recognized and supported. It's like a language spoken worldwide, ensuring that programmers from different cultures and backgrounds can collaborate and share their knowledge.
 
 *In essence, C programming is both a time-tested classic and a cutting-edge tool. It empowers programmers to build incredible software, from the most practical applications to the most imaginative games. It's the language of choice when you want to make computers do your bidding swiftly and precisely, making it a standout in the world of coding.*
+
+> Welcome to the world of programming and mathematics! This repository contains a collection of fun and informative C functions. Each function has a unique purpose, and we'll explore them one by one. Let's dive in!
