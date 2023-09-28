@@ -1,5 +1,7 @@
 #include "main.h"
 
+int _sqrt(int n, int guess);
+
 /**
  * _sqrt_recursion - Calculates the natural square root of a number,
  * using recursion.
@@ -20,32 +22,35 @@ int _sqrt_recursion(int n)
 		return (n);
 	}
 
+	else
+	{
+		return (_sqrt(n, 1));
+	}
+}
+
 /**
- * _sqrt_recursive - Recursive function to find the square root,
+ * _sqrt - Assisting function to find the square root,
  * using binary search.
+ * @n: The number for which to calculate the square root.
  * @guess: The current guess for the square root.
  *
- * Return: The square root of the number if found,
- * or -1 if it does not have a natural square root.
+ * Return: Square root of n,or -1 if it does not have a natural square root.
  */
 
-	int _sqrt_recursive(int guess)
+int _sqrt(int n, int guess)
+{
+	if (guess * guess == n)
 	{
-		if (guess * guess == n)
-		{
-			return (guess);
-		}
-
-		else if (guess * guess > n)
-		{
-			return (-1);
-		}
-
-		else
-		{
-			return (_sqrt_recursive(guess + 1));
-		}
+		return (guess);
 	}
 
-	return (_sqrt_recursive(1));
+	else if (guess * guess > n)
+	{
+		return (-1);
+	}
+
+	else
+	{
+		return (_sqrt(n, guess + 1));
+	}
 }
