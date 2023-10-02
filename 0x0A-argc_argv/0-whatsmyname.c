@@ -1,16 +1,26 @@
 #include "main.h"
 
+
 /**
- * main - Entry point.
- * @argc: Arguments passed to program.
- * @argv: An array of pointers to arguments.
+ * main - Entry point of the program.
+ * @argc: The number of command-line arguments.
+ * @argv: An array of strings containing the arguments.
  *
- * Return: Always 0 (indicate success).
+ * Return: Always 0 (success).
  */
 
-int main(int __attribute__((unused)) argc, char *argv[])
-{
-	printf("%s\n", argv[0]);
+int main(__attribute__((unused)) int argc, char *argv[])
 
-	return (0);
+{
+int i;
+
+if (argv[0])
+{
+for (i = 0; argv[0][i] != '\0'; i++)
+{
+_putchar(argv[0][i]);
+}
+_putchar('\n');
+}
+return (0);
 }
