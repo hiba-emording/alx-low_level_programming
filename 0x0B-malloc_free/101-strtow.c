@@ -42,28 +42,29 @@ int word_count, j, i = 0;
 		else
 		{
 			words[i] = copy_word(str);
-		}
 
-		if (words[i] == NULL)
+			if (words[i] == NULL)
 
-		{
-
-			for (j = 0; j < i; j++)
 			{
-				free(words[j]);
-			}
+				for (j = 0; j < i; j++)
+				{
+					free(words[j]);
+				}
 				free(words);
 				return (NULL);
-		}
+			}
 
 		i++;
 		while (*str && *str != ' ')
 		{
 			str++;
 		}
+		}
 	}
-
-	words[i] = NULL;
+	if (i == word_count)
+	{
+		words[i] = NULL;
+	}
 	return (words);
 }
 
