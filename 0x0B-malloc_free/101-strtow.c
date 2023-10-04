@@ -34,12 +34,12 @@ int word_count, j, i = 0;
 
 	while (*str)
 	{
-		if (*str == ' ')
+		while (*str && *str == ' ')
 		{
 			str++;
 		}
 
-		else
+		if (*str)
 		{
 			words[i] = copy_word(str);
 
@@ -61,10 +61,12 @@ int word_count, j, i = 0;
 		}
 		}
 	}
+
 	if (i == word_count)
 	{
 		words[i] = NULL;
 	}
+
 	return (words);
 }
 
