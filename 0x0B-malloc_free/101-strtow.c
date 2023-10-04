@@ -17,11 +17,26 @@ char **strtow(char *str)
 {
 char **words;
 int word_count, j, i = 0;
+int all_spaces = 1;
 
 	if (str == NULL || *str == '\0')
 	{
 		return (NULL);
 	}
+
+while (*str)
+{
+if (*str != ' ')
+{
+all_spaces = 0;
+break;
+}
+str++;
+}
+if (all_spaces)
+{
+return (NULL);
+}
 
 	word_count = count_words(str);
 
@@ -62,11 +77,7 @@ int word_count, j, i = 0;
 		}
 	}
 
-	if (i == word_count)
-	{
-		words[i] = NULL;
-	}
-
+	words[i] = NULL;
 	return (words);
 }
 
@@ -94,6 +105,11 @@ int is_word = 0;
 			count++;
 		}
 	str++;
+	}
+
+	if (count == 1 && is_word == 0)
+	{
+		return (0);
 	}
 
 	return (count);
