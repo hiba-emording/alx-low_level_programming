@@ -1,129 +1,128 @@
+#include <stdlib.h>
 #include "main.h"
 
-int main(int argc, char *argv[]);
+int is_digit(char *s);
+int str_length(char *s);
+void handle_errors(void);
 
 /**
- * multiply - Multiplies two positive numbers.
- * @num1: The first number.
- * @num2: The second number.
- *
- * Return: The result of the multiplication.
- */
-
-int multiply(int num1, int num2)
-{
-	return (num1 * num2);
-}
-
-/**
- * _isdigit - Checks whether a character is a digit (0 through 9).
- *
- * @c: character to check.
- * Return: 1 if c is a digit, 0 otherwise.
- */
-
-int _isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
-
-#include "main.h"
-#include <limits.h>
-
-/**
- * _atoi - Converts a string to an integer.
- * @s: Pointer to the string to be converted.
- *
- * Return: The integer value of the string, or 0 if no valid integer is found.
- */
-
-int _atoi(char *s)
-{
-
-unsigned int n = 0;
-int sign = 1;
-
-while (*s)
-
-{
-if (*s == '-')
-{
-	sign *= -1;
-}
-else if (*s >= '0' && *s <= '9')
-{
-n = (n * 10) + (*s - '0');
-}
-else if (n > 0)
-{
-	break;
-}
-s++;
-}
-
-return (n *sign);
-}
-
-/**
- * main - Entry point of the program.
+ * main - Multiplies two positive numbers.
  * @argc: The number of command-line arguments.
- * @argv: An array of strings containing the arguments.
+ * @argv: An array of command-line arguments.
  *
- * Return: 0 on success, 1 on error.
+ * Return: Always 0 (Success).
  */
 
 int main(int argc, char *argv[])
 {
-int i, num1, num2, result, divisor, temp;
+char *num1_str, *num2_str;
+int num1_len, num2_len, result_len, i, carry;
+int digit1, digit2, *result, leading_zeros = 0;
 
-	if (argc != 3 || !_isdigit(*argv[1]) || !_isdigit(*argv[2]))
-	{
-		char error_message[] = "Error\n";
+if (argc != 3 || !is_digit(argv[1]) || !is_digit(argv[2]))
+{
+handle_errors();
+}
+num1_str = argv[1];
+num2_str = argv[2];
+num1_len = str_length(num1_str);
+num2_len = str_length(num2_str);
+result_len = num1_len + num2_len + 1;
 
-		for (i = 0; error_message[i] != '\0'; i++)
-		{
-			_putchar(error_message[i]);
-		}
-		return (98);
-	}
+result = malloc(sizeof(int) * result_len);
 
-	num1 = _atoi(argv[1]);
-	num2 = _atoi(argv[2]);
-	result = multiply(num1, num2);
+if (!result)
+{
+return (1);
+}
+for (i = 0; i <= num1_len + num2_len; i++)
+{
+result[i] = 0;
+}
+for (num1_len = num1_len - 1; num1_len >= 0; num1_len--)
+{
+digit1 = num1_str[num1_len] - '0';
+carry = 0;
+for (num2_len = str_length(num2_str) - 1; num2_len >= 0; num2_len--)
+{
+digit2 = num2_str[num2_len] - '0';
+carry += result[num1_len + num2_len + 1] + (digit1 *digit2);
+result[num1_len + num2_len + 1] = carry % 10;
+carry /= 10;
+}
+if (carry > 0)
+{
+result[num1_len + num2_len + 1] += carry;
+}
+}
+for (i = 0; i < result_len - 1; i++)
+{
+if (result[i])
+{
+leading_zeros = 1;
+}
+if (leading_zeros)
+{
+_putchar(result[i] + '0');
+}
+}
+if (!leading_zeros)
+{
+_putchar('0');
+}
+_putchar('\n');
+free(result);
+return (0);
+}
 
-	if (result == 0)
-	{
-		_putchar('0');
-	}
-	else
-	{
-		if (result < 0)
-		{
-			_putchar('-');
-			result = -result;
-		}
-		divisor = 1;
-		temp = result;
-		while (temp > 9)
-		{
-			temp /= 10;
-			divisor *= 10;
-		}
-		while (divisor > 0)
-		{
-			_putchar((result / divisor) + '0');
-			result %= divisor;
-			divisor /= 10;
-		}
-	}
+/**
+ * is_digit - Checks if a string contains only digit characters.
+ * @s: The string to be evaluated.
+ *
+ * Return: 1 if all characters are digits, 0 otherwise.
+ */
+int is_digit(char *s)
+{
+int i = 0;
 
-	_putchar('\n');
-	return (0);
+while (s[i])
+{
+if (s[i] < '0' || s[i] > '9')
+return (0);
+i++;
+}
+return (1);
+}
+
+/**
+ * str_length - Calculates the length of a string.
+ * @s: The string to evaluate.
+ *
+ * Return: The length of the string.
+ */
+int str_length(char *s)
+{
+int length = 0;
+
+while (s[length] != '\0')
+{
+length++;
+}
+return (length);
+}
+
+/**
+ * handle_errors - Handles errors by printing an error message and exiting.
+ */
+void handle_errors(void)
+{
+char error_message[] = "Error\n";
+int i = 0;
+
+while (error_message[i] != '\0')
+{
+_putchar(error_message[i]);
+i++;
+}
+exit(98);
 }
