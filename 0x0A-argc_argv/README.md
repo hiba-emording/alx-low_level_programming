@@ -38,7 +38,7 @@ These arguments allow programs to receive inputs and configurations directly fro
 
 > These tasks showcase the versatility of using `argc` and `argv` to create command-line programs that can handle different inputs and produce meaningful output.
 
-Remember, "It ain't what they call you, it's what you answer to." – So, let these programs answer your commands and share some coding fun along the way!
+> Remember, "It ain't what they call you, it's what you answer to." – So, let these programs answer your commands and share some coding fun along the way!
 
-Feel free to explore each task's code and test them out with different command-line arguments.
+> Feel free to explore each task's code and test them out with different command-line arguments.
 
