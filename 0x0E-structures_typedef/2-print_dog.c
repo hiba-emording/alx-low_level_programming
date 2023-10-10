@@ -12,9 +12,9 @@ void print_dog(my_dog *d)
 	if (d == NULL)
 		return;
 
-	printf("my_dog.name = %s\n", (d->name != NULL) ? d->name : "(nil)");
+	printf("Name: %s\n", (d->name != NULL) ? d->name : "(nil)");
 
-	printf("my_dog.age = %.6f\n", d->age);
+	printf("Age: %.6f\n", d->age);
 
-	printf("my_dog.owner: %s\n", (d->owner != NULL) ? d->owner : "(nil)");
+	printf("Owner: %s\n", (d->owner != NULL) ? d->owner : "(nil)");
 }
