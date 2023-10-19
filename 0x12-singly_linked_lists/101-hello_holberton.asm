@@ -1,15 +1,15 @@
 section .data
-    format db `Hello, Holberton\n`, 0
+	format db `Hello, Holberton\n`, 0
 
 section .text
-    global main
-    extern printf
+	global main
+	extern printf
 
 main:
-    mov edi, format
-    xor eax, eax
-    call printf
+	mov edi, format
+	xor eax, eax
+	call printf
 
-    mov eax, 60
-    xor edi, edi
-    syscall
+	mov eax, 60
+	xor edi, edi
+	syscall
