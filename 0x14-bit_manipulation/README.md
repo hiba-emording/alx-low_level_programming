@@ -59,8 +59,8 @@ You can use the following command to download a file from a GitHub repository. T
 curl <GitHub Raw File URL> -o <Output File>
 ```
 
-* "<GitHub Raw File URL>": Replace this with the URL of the raw file you want to download from the GitHub repository. Ensure that the URL points directly to the file's content.
-* "<Output File>": Specify the name you want for the downloaded file.
+<GitHub Raw File URL>: Replace this with the URL of the raw file you want to download from the GitHub repository. Ensure that the URL points directly to the file's content.
+<Output File>: Specify the name you want for the downloaded file.
 
 ~ Example - How to use:
 
