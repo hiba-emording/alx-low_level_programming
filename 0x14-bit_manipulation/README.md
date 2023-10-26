@@ -40,6 +40,13 @@
 - **Description:** In this task, I implemented a function to check the endianness of the system, returning 0 for big endian and 1 for little endian.
 - **Fun Fact:** Endianness affects how data is stored in memory. It's essential for data transmission and low-level programming, as it determines how bytes are ordered in memory.
 
+### Explanation for Endianness:
+Endianness refers to the byte order in which data is stored in memory. There are two common types:
+
+* Big Endian: The most significant byte is stored at the lowest memory address (left-to-right).
+* Little Endian: The least significant byte is stored at the lowest memory address (right-to-left).
+Endianness matters when transferring data between different computer architectures, and it's crucial in binary file formats and network protocols.
+
 ## Task 7: Crackme3 🔐
 - **File:** `101-password`
 - **Description:** In this task, the goal was to find the password for a given program and save it in a file named "101-password."
@@ -57,9 +64,8 @@ curl <GitHub Raw File URL> -o <Output File>
 
 ~ Example - How to use:
 
-```
+```bash
 curl https://raw.githubusercontent.com/username/repository/main/path/to/file.txt -o downloaded_file.txt
-```
 
 > These tasks explore the fascinating world of bit manipulation, where every bit counts, and provide insights into the binary foundation of computing. Understanding binary operations is essential for low-level programming and working with embedded systems.
 
