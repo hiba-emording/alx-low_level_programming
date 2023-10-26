@@ -58,6 +58,7 @@ You can use the following command to download a file from a GitHub repository. T
 
 ```bash
 curl <GitHub Raw File URL> -o <Output File>
+```
 
 * <GitHub Raw File URL>: Replace this with the URL of the raw file you want to download from the GitHub repository. Ensure that the URL points directly to the file's content.
 * <Output File>: Specify the name you want for the downloaded file.
@@ -66,6 +67,7 @@ curl <GitHub Raw File URL> -o <Output File>
 
 ```bash
 curl https://raw.githubusercontent.com/username/repository/main/path/to/file.txt -o downloaded_file.txt
+```
 
 > These tasks explore the fascinating world of bit manipulation, where every bit counts, and provide insights into the binary foundation of computing. Understanding binary operations is essential for low-level programming and working with embedded systems.
 
