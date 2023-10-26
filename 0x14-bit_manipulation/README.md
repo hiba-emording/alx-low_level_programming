@@ -42,10 +42,9 @@
 
 ### Explanation for Endianness:
 Endianness refers to the byte order in which data is stored in memory. There are two common types:
-
 * Big Endian: The most significant byte is stored at the lowest memory address (left-to-right).
 * Little Endian: The least significant byte is stored at the lowest memory address (right-to-left).
-Endianness matters when transferring data between different computer architectures, and it's crucial in binary file formats and network protocols.
+* Endianness matters when transferring data between different computer architectures, and it's crucial in binary file formats and network protocols.
 
 ## Task 7: Crackme3 🔐
 - **File:** `101-password`
