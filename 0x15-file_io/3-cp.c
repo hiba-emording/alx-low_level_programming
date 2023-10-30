@@ -30,20 +30,20 @@ char *file_from, *file_to, buffer[BUFFER_SIZE];
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		close(fd_from), exit(99);
 	}
 	while ((reader = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		if (write(fd_to, buffer, reader) != reader)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			close(fd_from), close(fd_to), exit(99);
 		}
 	}
 	if (reader == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
 		close(fd_from), close(fd_to);
 	}
 	if (close(fd_from) == -1 || close(fd_to) == -1)
