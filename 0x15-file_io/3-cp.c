@@ -1,5 +1,5 @@
 #include "main.h"
-#include <errno.h>
+
 #define BUFFER_SIZE 1024
 
 /**
@@ -44,11 +44,11 @@ char *file_from, *file_to, buffer[BUFFER_SIZE];
 	if (reader == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
-		close(fd_from), close(fd_to);
+		close(fd_from), close(fd_to), exit(98);
 	}
 	if (close(fd_from) == -1 || close(fd_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", errno);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
 	return (0);
