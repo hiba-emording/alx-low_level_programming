@@ -43,7 +43,7 @@ char *file_from, *file_to, buffer[BUFFER_SIZE];
 	}
 	if (reader == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		close(fd_from), close(fd_to), exit(98);
 	}
 	if (close(fd_from) == -1 || close(fd_to) == -1)
